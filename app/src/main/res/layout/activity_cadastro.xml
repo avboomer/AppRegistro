@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:padding="10dp"
+    tools:context=".CadastroActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/prosaepoesia"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registre sua Conta"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
+
+        <EditText
+            android:id="@+id/campologinc"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:hint="E-mail"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/camposenhac"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:hint="Senha"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/camposenhacc"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:hint="Confirmar Senha"
+            android:padding="5dp"/>
+
+        <Button
+            android:id="@+id/botaologin"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:text="Registrar"
+            android:padding="5dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- Ou registre com -" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bcgoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/noColor"
+                android:padding="5dp"
+                android:drawableLeft="@mipmap/ic_google_round"/>
+
+            <Button
+                android:id="@+id/bcfacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/noColor"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:drawableLeft="@mipmap/ic_facebook"/>
+
+            <Button
+                android:id="@+id/bctwitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/noColor"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:drawableLeft="@mipmap/ic_twitter"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não tem uma conta?" />
+
+        <Button
+            android:id="@+id/botaocadastroc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/noColor"
+            android:text="Registre-se"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>
