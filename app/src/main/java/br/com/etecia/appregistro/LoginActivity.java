@@ -17,8 +17,6 @@ public class LoginActivity extends AppCompatActivity {
 
     String modo_cadastro;
 
-    String[][] strings = new String[1000][1000];
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
