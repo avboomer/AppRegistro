@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String modo_login = intent.getStringExtra("modologin");
 
-        Toast.makeText(getApplicationContext(), "Entrou com: " + modo_login, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Entrou com: " + modo_login, Toast.LENGTH_LONG).show();
 
     }
 }
