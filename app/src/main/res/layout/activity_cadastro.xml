@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registre sua Conta"
+        android:text="@string/cadastro_titulo_registre_sua_conta"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center"/>
@@ -34,28 +34,28 @@
             android:id="@+id/campologinc"
             android:layout_width="280dp"
             android:layout_height="60dp"
-            android:hint="E-mail"
+            android:hint="@string/cadastro_usuario"
             android:padding="5dp"/>
 
         <EditText
             android:id="@+id/camposenhac"
             android:layout_width="280dp"
             android:layout_height="60dp"
-            android:hint="Senha"
+            android:hint="@string/cadastro_senha"
             android:padding="5dp"/>
 
         <EditText
             android:id="@+id/camposenhacc"
             android:layout_width="280dp"
             android:layout_height="60dp"
-            android:hint="Confirmar Senha"
+            android:hint="@string/cadastro_confirmar_senha"
             android:padding="5dp"/>
 
         <Button
-            android:id="@+id/botaologin"
+            android:id="@+id/botaocadastroc"
             android:layout_width="280dp"
             android:layout_height="60dp"
-            android:text="Registrar"
+            android:text="@string/cadastro_registrar"
             android:padding="5dp"/>
     </LinearLayout>
 
@@ -70,7 +70,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- Ou registre com -" />
+            android:text="@string/cadastro_ou_registre_com" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -83,7 +83,8 @@
                 android:layout_margin="5dp"
                 android:background="@color/noColor"
                 android:padding="5dp"
-                android:drawableLeft="@mipmap/ic_google_round"/>
+                android:drawableLeft="@mipmap/ic_google_round"
+                android:drawableStart="@mipmap/ic_google_round" />
 
             <Button
                 android:id="@+id/bcfacebook"
@@ -92,7 +93,8 @@
                 android:background="@color/noColor"
                 android:layout_margin="5dp"
                 android:padding="5dp"
-                android:drawableLeft="@mipmap/ic_facebook"/>
+                android:drawableLeft="@mipmap/ic_facebook"
+                android:drawableStart="@mipmap/ic_facebook" />
 
             <Button
                 android:id="@+id/bctwitter"
@@ -101,29 +103,10 @@
                 android:background="@color/noColor"
                 android:layout_margin="5dp"
                 android:padding="5dp"
-                android:drawableLeft="@mipmap/ic_twitter"/>
+                android:drawableLeft="@mipmap/ic_twitter"
+                android:drawableStart="@mipmap/ic_twitter" />
         </LinearLayout>
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Não tem uma conta?" />
-
-        <Button
-            android:id="@+id/botaocadastroc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/noColor"
-            android:text="Registre-se"
-            android:textAllCaps="false" />
     </LinearLayout>
 
 </LinearLayout>
