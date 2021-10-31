@@ -10,40 +10,52 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class CadastroActivity extends AppCompatActivity {
-    EditText campologin, camposenha;
-    Button botaocadastro;
-    Button botaocadastrogoogle, botaocadastrofacebook, botaocadastrotwitter;
+    EditText campo_login, campo_senha;
+    EditText campo_senha_confirmada;
+    Button botao_cadastro;
+    Button botao_cadastro_google, botao_cadastro_facebook, botao_cadastro_twitter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        campologin = findViewById(R.id.campologinc);
-        camposenha = findViewById(R.id.camposenhac);
+        campo_login = findViewById(R.id.campologinc);
+        campo_senha = findViewById(R.id.camposenhac);
+        campo_senha_confirmada = findViewById(R.id.camposenhacc);
 
-        botaocadastro = findViewById(R.id.botaocadastroc);
-        botaocadastrogoogle = findViewById(R.id.bcgoogle);
-        botaocadastrofacebook = findViewById(R.id.bcfacebook);
-        botaocadastrotwitter = findViewById(R.id.bctwitter);
+        botao_cadastro = findViewById(R.id.botaocadastroc);
+        botao_cadastro_google = findViewById(R.id.bcgoogle);
+        botao_cadastro_facebook = findViewById(R.id.bcfacebook);
+        botao_cadastro_twitter = findViewById(R.id.bctwitter);
 
-        botaocadastro.setOnClickListener(new View.OnClickListener() {
+        botao_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usuario, senha;
-                usuario = campologin.getText().toString();
-                senha = camposenha.getText().toString();
+                String usuario, senha, senha_confirmada;
+                usuario = campo_login.getText().toString();
+                senha = campo_senha.getText().toString();
+                senha_confirmada = campo_senha_confirmada.getText().toString();
 
-                Toast.makeText(getApplicationContext(), "Cadastro realizado!! Usuario: "+usuario+"Senha: "+senha, Toast.LENGTH_SHORT).show();
+                if (!usuario.isEmpty()) {
+                    if (!senha.isEmpty() && senha_confirmada.matches(senha)) {
+                        Toast.makeText(getApplicationContext(), "Cadastro realizado! Usuário: " + usuario + "Senha: " + senha, Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                        intent.putExtra("modocadastro", "default");
 
-                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-
-                startActivity(intent);
-                finish();
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Senhas não batem! Checar...", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Usuário está vazio! Checar...", Toast.LENGTH_LONG).show();
+                    campo_login.requestFocus();
+                }
             }
         });
 
-        botaocadastrogoogle.setOnClickListener(new View.OnClickListener() {
+        botao_cadastro_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int contador = 4;
@@ -60,7 +72,7 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
 
-        botaocadastrofacebook.setOnClickListener(new View.OnClickListener() {
+        botao_cadastro_facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int contador = 4;
@@ -77,7 +89,7 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
 
-        botaocadastrotwitter.setOnClickListener(new View.OnClickListener() {
+        botao_cadastro_twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int contador = 4;
