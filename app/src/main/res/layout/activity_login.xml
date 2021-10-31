@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Entre em seu Perfil"
+        android:text="@string/login_entre_em_seu_perfil"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center"/>
@@ -34,21 +34,21 @@
             android:id="@+id/campologin"
             android:layout_width="280dp"
             android:layout_height="60dp"
-            android:hint="E-mail"
+            android:hint="@string/login_usuario"
             android:padding="5dp"/>
 
         <EditText
             android:id="@+id/camposenha"
             android:layout_width="280dp"
             android:layout_height="60dp"
-            android:hint="Senha"
+            android:hint="@string/login_senha"
             android:padding="5dp"/>
 
         <Button
             android:id="@+id/botaologin"
             android:layout_width="280dp"
             android:layout_height="60dp"
-            android:text="Entrar"
+            android:text="@string/login_entrar"
             android:padding="5dp"/>
     </LinearLayout>
 
@@ -63,7 +63,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- Ou entre com -" />
+            android:text="@string/login_ou_entre_com" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -76,7 +76,8 @@
                 android:background="@color/noColor"
                 android:layout_margin="5dp"
                 android:padding="5dp"
-                android:drawableLeft="@mipmap/ic_google_round"/>
+                android:drawableLeft="@mipmap/ic_google_round"
+                android:drawableStart="@mipmap/ic_google_round" />
 
             <Button
                 android:id="@+id/blfacebook"
@@ -85,7 +86,8 @@
                 android:background="@color/noColor"
                 android:layout_margin="5dp"
                 android:padding="5dp"
-                android:drawableLeft="@mipmap/ic_facebook"/>
+                android:drawableLeft="@mipmap/ic_facebook"
+                android:drawableStart="@mipmap/ic_facebook" />
 
             <Button
                 android:id="@+id/bltwitter"
@@ -94,7 +96,8 @@
                 android:background="@color/noColor"
                 android:layout_margin="5dp"
                 android:padding="5dp"
-                android:drawableLeft="@mipmap/ic_twitter"/>
+                android:drawableLeft="@mipmap/ic_twitter"
+                android:drawableStart="@mipmap/ic_twitter" />
         </LinearLayout>
 
     </LinearLayout>
@@ -108,14 +111,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Não tem uma conta?" />
+            android:text="@string/login_n_o_tem_uma_conta" />
 
         <Button
             android:id="@+id/botaocadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/noColor"
-            android:text="Registre-se"
+            android:text="@string/login_registre_se"
             android:textAllCaps="false" />
     </LinearLayout>
 
