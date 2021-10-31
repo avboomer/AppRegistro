@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">AppRegistro</string>
+    <string name="cadastro_usuario">Usuario</string>
+    <string name="cadastro_titulo_registre_sua_conta">Registre sua Conta</string>
+    <string name="cadastro_senha">Senha</string>
+    <string name="cadastro_confirmar_senha">Confirmar Senha</string>
+    <string name="cadastro_registrar">Registrar</string>
+    <string name="cadastro_ou_registre_com">- Ou registre com -</string>
+    <string name="login_entre_em_seu_perfil">Entre em seu Perfil</string>
+    <string name="login_usuario">Usuario</string>
+    <string name="login_senha">Senha</string>
+    <string name="login_entrar">Entrar</string>
+    <string name="login_ou_entre_com">- Ou entre com -</string>
+    <string name="login_n_o_tem_uma_conta">Não tem uma conta?</string>
+    <string name="login_registre_se">Registre-se</string>
 </resources>
