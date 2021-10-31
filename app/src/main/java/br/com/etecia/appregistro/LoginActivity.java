@@ -10,35 +10,43 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText campologin, camposenha;
-    Button botaologin, botaocadastro;
-    Button botaologingoogle, botaologinfacebook, botaologintwitter;
+    EditText campo_login, campo_senha;
+
+    Button botao_login, botao_cadastro;
+    Button botao_login_google, botao_login_facebook, botao_login_twitter;
+
+    String modo_cadastro;
+
+    String[][] strings = new String[1000][1000];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Intent intent = getIntent();
-        final String modo_cadastro = intent.getStringExtra("modologin");
+        try {
+            Intent intent = getIntent();
+            modo_cadastro = intent.getStringExtra("modocadastro");
+            Toast.makeText(getApplicationContext(), "Cadastrou usuário com: " + modo_cadastro, Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
-        Toast.makeText(getApplicationContext(), "Cadastrou usuário com: " + modo_cadastro, Toast.LENGTH_SHORT).show();
+        campo_login = findViewById(R.id.campologin);
+        campo_senha = findViewById(R.id.camposenha);
 
-        campologin = findViewById(R.id.campologin);
-        camposenha = findViewById(R.id.camposenha);
+        botao_login = findViewById(R.id.botaologin);
+        botao_cadastro = findViewById(R.id.botaocadastro);
+        botao_login_google = findViewById(R.id.blgoogle);
+        botao_login_facebook = findViewById(R.id.blfacebook);
+        botao_login_twitter = findViewById(R.id.bltwitter);
 
-        botaologin = findViewById(R.id.botaologin);
-        botaocadastro = findViewById(R.id.botaocadastro);
-        botaologingoogle = findViewById(R.id.blgoogle);
-        botaologinfacebook = findViewById(R.id.blfacebook);
-        botaologintwitter = findViewById(R.id.bltwitter);
-
-        botaologin.setOnClickListener(new View.OnClickListener() {
+        botao_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String usuario, senha;
-                usuario = campologin.getText().toString();
-                senha = camposenha.getText().toString();
+                usuario = campo_login.getText().toString();
+                senha = campo_senha.getText().toString();
                 if (usuario.equals("abelhinha") && senha.equals("123456789")) {
                     Toast.makeText(getApplicationContext(), "Bem vindo ao sistema!!!", Toast.LENGTH_SHORT).show();
 
@@ -49,16 +57,17 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 } else {
 
-                    Toast.makeText(getApplicationContext(), "Usuário ou senha inválidos!!!", Toast.LENGTH_SHORT).show();
-                    campologin.setText("");
-                    camposenha.setText("");
-                    campologin.requestFocus();
+                    Toast.makeText(getApplicationContext(), "Usuário ou senha inválidos!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Dica: este app é apenas uma simulação, tente \"abelhinha\" e \"123456789\"", Toast.LENGTH_SHORT).show();
+                    campo_login.setText("");
+                    campo_senha.setText("");
+                    campo_login.requestFocus();
 
                 }
             }
         });
 
-        botaologingoogle.setOnClickListener(new View.OnClickListener() {
+        botao_login_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (modo_cadastro.equals("google")) {
@@ -78,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        botaologinfacebook.setOnClickListener(new View.OnClickListener() {
+        botao_login_facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (modo_cadastro.equals("facebook")) {
@@ -98,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        botaologintwitter.setOnClickListener(new View.OnClickListener() {
+        botao_login_twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (modo_cadastro.equals("twitter")) {
@@ -118,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        botaocadastro.setOnClickListener(new View.OnClickListener() {
+        botao_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
